@@ -11,7 +11,9 @@ Wireframe or sketch of the design
   https://workspace.google.com/marketplace/app/wireframepro/413107853716
   
 API's to be used
+Recipe Grabber
   https://www.eatright.org
+  https://rapidapi.com/fanara-unlimited-llc-fanara-unlimited-llc-default/api/recipe-grabber/
   
 Rough breakdown of tasks
   Focus, complete MVP
