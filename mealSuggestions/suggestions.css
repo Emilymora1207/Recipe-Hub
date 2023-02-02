@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.dropdown {
+    margin: 30px;
+}
+
+.dropdown > select {
+    width:150px;
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+}
+
+.checkBoxes  {
+    border-radius: 5px;
+    Width:400px;
+    height: 500px;
+    margin: 20px;
+    padding: 40px;
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.suggestionsPage {
+    display: none;
+}
+
+.mainDiv {
+    display:flex;
+}
+
+.suggestionsList {
+    display: flex;
+    flex-direction: row;
+}
+
+.suggestionsList li {
+    list-style: none;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 10px;
+}
