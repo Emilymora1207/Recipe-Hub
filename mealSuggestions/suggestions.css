@@ -1,6 +1,17 @@
+
+
+* {
+    text-align: center;
+}
+
 body {
+    margin:0px;
+    padding: 0px;
     display: flex;
     justify-content: center;
+}
+li {
+    list-style: none;
 }
 
 .parameters {
@@ -43,6 +54,9 @@ body {
 .suggestionsList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 400;
+    padding: 0;
 }
 
 .suggestionsList li {
@@ -50,4 +64,47 @@ body {
     background-color: lightgray;
     border-radius: 5px;
     margin: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 400px;
+    justify-content: space-between;
+    /* width: 500px; */
+}
+.suggestionsList li img {
+    align-self: center;
+    border-radius: 5px;
+}
+
+.suggestionsList button {
+    margin: 15px;
+}
+
+.suggestionsList h2 {
+    width:300px;
+}
+
+.lists {
+    display: flex;
+}
+
+.fullLength {
+    width: 100%;
+}
+.aside {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .larger {
+    width:80%;
+}
+
+.oSide {
+    width:15%;
+} */
+
+.favoriteMealList {
+    padding: 0;
 }

@@ -1,133 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Suggestions</title>
-    <link rel=stylesheet href="./suggestions.css"/>
+    <link rel=stylesheet href="./suggestions.css" />
 </head>
+
 <body>
     <main class="choosingOptions">
         <h1>Find your perfect meal here</h1>
         <form class="parameters">
-        <section class="dropdown" >
-            <label>Cuisine type</label>
-            <select class="cuisineType" >
-                <option></option>
-                <option value="african">African</option>
-                <option value="chinese">Chinese</option>
-                <option value="japanese">Japanese</option>
-                <option value="korean">Korean</option>
-                <option value="vietnamese">vietnamese</option>
-                <option value="thai">Thai</option>
-                <option value="indian">Indian</option>
-                <option value="british">British</option>
-                <option value="irish">Irish</option>
-                <option value="french">French</option>
-                <option value="italian">Italian</option>
-                <option value="mexican">Mexican</option>
-                <option value="spanish">Spanish</option>
-                <option value="middle%20eastern">Middle Eastern</option>
-                <option value="jewish">Jewish</option>
-                <option value="american">American</option>
-                <option value="cajun">Cajun</option>
-                <option value="southern">Southern</option>
-                <option value="greek">Greek</option>
-                <option value="german">German</option>
-                <option value="nordic">Nordic</option>
-                <option value="eastern%20european">Eastern European</option>
-                <option value="caribbean">Caribbean</option>
-                <option value="latin%20american">Latin American</option>
-            </select>
-        </section>
-        <section class="dropdown">
-            <label>Diet</label>
-            <select class=" diet" >
-                <option></option>
-                <option value="prescetarian">Pescatarian</option>
-                <option value="vegan">Vegan</option>
-                <option value="paleo">Paleo</option>
-                <option value="Primal">Primal</option>
-                <option value="vegetarian">Vegetarian</option>
-            </select>
-        </section>
-        <section >
-        <section class="dropdown">
-            <label>Dish Type</label>
-            <select class="dishType" >
-                <option></option>
-                <option value="main%20course">Main Course</option>
-                <option value="side%20dish">Side dish</option>
-                <option value="dessert">Dessert</option>
-                <option value="appetizer">Appetizer</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="salad">Salad</option>
-                <option value="bread">Bread</option>
-                <option value="soup">Soup</option>
-                <option value="drink">Drink</option>
-                <option value="sauce">Sauce</option>
-            </select>
-        </section>
+            <section class="dropdown">
+                <label>Cuisine type</label>
+                <select class="cuisineType">
+                    <option></option>
+                    <option value="african">African</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="korean">Korean</option>
+                    <option value="vietnamese">vietnamese</option>
+                    <option value="thai">Thai</option>
+                    <option value="indian">Indian</option>
+                    <option value="british">British</option>
+                    <option value="irish">Irish</option>
+                    <option value="french">French</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="middle%20eastern">Middle Eastern</option>
+                    <option value="jewish">Jewish</option>
+                    <option value="american">American</option>
+                    <option value="cajun">Cajun</option>
+                    <option value="southern">Southern</option>
+                    <option value="greek">Greek</option>
+                    <option value="german">German</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="eastern%20european">Eastern European</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="latin%20american">Latin American</option>
+                </select>
+            </section>
+            <section class="dropdown">
+                <label>Diet</label>
+                <select class=" diet">
+                    <option></option>
+                    <option value="prescetarian">Pescatarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="paleo">Paleo</option>
+                    <option value="Primal">Primal</option>
+                    <option value="vegetarian">Vegetarian</option>
+                </select>
+            </section>
+            <section>
+                <section class="dropdown">
+                    <label>Dish Type</label>
+                    <select class="dishType">
+                        <option></option>
+                        <option value="main%20course">Main Course</option>
+                        <option value="side%20dish">Side dish</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="appetizer">Appetizer</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="salad">Salad</option>
+                        <option value="bread">Bread</option>
+                        <option value="soup">Soup</option>
+                        <option value="drink">Drink</option>
+                        <option value="sauce">Sauce</option>
+                    </select>
+                </section>
         </form>
-            <!-- <form class="checkBoxes">
-                <h2>Please check any health restirctions</h2>
-                <section>
-                    <input type="checkbox" name= "health" id="health1" value="alcohol-free">
-                    <label for="health1">Alchohol-free</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health2" value="dairy-free">
-                    <label for="health2">Dairy-free</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health3" value="gluten-free">
-                    <label for="health3">Gluten-free</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health4" value="keto-friendly">
-                    <label for="health4">Keto-friendly</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health5" value="low-sugar">
-                    <label for="health5">Low Sugar</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health6" value="peanut-free">
-                    <label for="health6">Peanut-free</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health7" value="pecatarian">
-                    <label for="health7">Pescatarian</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health8" value="soy-free">
-                    <label for="health8">Soy-free</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health9" value="vegan">
-                    <label for="health9">Vegan</label>
-                </section>
-                <section>
-                    <input type="checkbox" name= "health" id="health10" value="vegetarian">
-                    <label for="health10">Vegetarian</label>
-                </section>
-            </form> -->
         <button class="submit">View Suggestions</button>
     </main>
-    <main class="suggestionsPage" >
-<div class="container mainDiv">
-        <h1 class="col-12">Your Meal Suggestions</h1>
-        <ul class="suggestionsList"></ul>
-</div>
-<div class="container mainDiv aside">
-<aside>
-    <h2>Your favorite Meals</h2>
-    <ul class="favoriteMealList"></ul>
-</aside>
-</div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="./suggestions.js"></script>
+    <main class="suggestionsPage">
+        <h1 class="col-lg-12">Your Meal Suggestions</h1>
+        <div class="lists">
+            <div class="col-8 larger container mainDiv">
+                <ul class="suggestionsList"></ul>
+            </div>
+            <aside class="col-4 onSide container mainDiv aside">
+                <h2 class="fullLength">Favorites</h2>
+                <ul class="favoriteMealList"></ul>
+            </aside>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./suggestions.js"></script>
 </body>
+
 </html>

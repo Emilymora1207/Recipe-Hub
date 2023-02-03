@@ -13,7 +13,7 @@ var suggestionsUrl;
 var cuisineType;
 var diet;
 var dishType;
-var mealtime = []
+var addingFavorites = [];
 
 //starts the function when the submit button is pressed
 viewSuggestionsBtn.addEventListener('click', chooseSearchParameters);
@@ -25,20 +25,8 @@ function chooseSearchParameters(event) {
   var diet = dietEl.value;
   var dishType = dishTypeEl.value;
 
-  // if (!cuisineType&&!diet&&!dishType) {
-  //   return
-  // } else {
-    console.log(cuisineType+diet+dishType);
-    getSuggestions(cuisineType, diet, dishType);
-  // }
-  // if (diet){
-  //   console.log(diet);
-  //   getSuggestions(diet);
-  // }
-  // if (dishType) {
-  //   console.log(dishType);
-  //   getSuggestions(dishType);
-  // }
+  console.log(cuisineType + diet + dishType);
+  getSuggestions(cuisineType, diet, dishType);
 };
 
 
@@ -50,82 +38,79 @@ function getSuggestions(cuisineType, diet, dishType) {
       'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     }
   };
-  
-  var suggestionsUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?cuisine='+cuisineType+'&diet='+diet+'&intolerances=gluten&type='+dishType+'&instructionsRequired=true&sort=random&offset=0&number=5&limitLicense=false&ranking=2'
+
+  var suggestionsUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?cuisine=' + cuisineType + '&diet=' + diet + '&type=' + dishType + '&instructionsRequired=true&sort=random&offset=0&number=6&limitLicense=false&ranking=2&addRecipieInformation=true'
 
   fetch(suggestionsUrl, options).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
         console.log(response);
-      displaySuggestions(data);
+        displaySuggestions(data);
         // demoEl.setAttribute('href', data.hits.recipe.image);
       });
-    } 
+    }
   });
 
-  };
+};
 
 function displaySuggestions(response) {
-choosingOptionsPage.style.display="block";
-suggestionsPageEl.style.display='flex';
-  for (i=0; i<response.results.length; i++){
-  // for(i=0; i<results.lenght; i++){
-var suggestionsitemsEl = document.createElement('li');
-suggestionsListEl.appendChild(suggestionsitemsEl);
-suggestionsListEl.setAttribute('class', 'col-4');
-var titleEl = document.createElement('h2');
-titleEl.textContent= response.results[i].title;
-suggestionsitemsEl.appendChild(titleEl);
-var imgEl = document.createElement('img');
-imgEl.setAttribute('src', response.results[i].image);
-suggestionsitemsEl.appendChild(imgEl);
-var addBtn = document.createElement('button');
-addBtn.textContent="+"
-suggestionsitemsEl.appendChild(addBtn);
-addBtn.setAttribute("id", response.results[i].title);
+  if (response.results.length< 1) {
+    alert ('there are no results');
+    return;
+  }
+  choosingOptionsPage.style.display = "none";
+  suggestionsPageEl.style.display = 'initial';
+  for (var i = 0; i < response.results.length; i++) {
+    // for(i=0; i<results.lenght; i++){
+    var suggestionsitemsEl = document.createElement('li');
+    suggestionsListEl.appendChild(suggestionsitemsEl);
+    // suggestionsItemsEl.setAttribute('class', 'col-4');
+    var titleEl = document.createElement('h2');
+    titleEl.textContent = response.results[i].title;
+    suggestionsitemsEl.appendChild(titleEl);
+    var imgEl = document.createElement('img');
+    imgEl.setAttribute('src', response.results[i].image);
+    suggestionsitemsEl.appendChild(imgEl);
+    var addBtn = document.createElement('button');
+    addBtn.textContent = "+";
+    suggestionsitemsEl.appendChild(addBtn);
+    addBtn.setAttribute("id", response.results[i].title);
   }
 }
 
-// suggestionsListEl.addEventListener('click', function(event) {
-//  mealTime = [mealtime + event.target.id];
-//  if(mealTime){
-//  localStorage.setItem('favoriteMeals', JSON.stringify(mealtime));
-//  }
-//  console.log(mealTime);
-//  console.log(event);
+suggestionsListEl.addEventListener('click', function (event) {
+  titleOfFavorites = event.target.id;
+  var favoriteMeals = JSON.parse(localStorage.getItem("favoriteMeals"));
+  console.log(favoriteMeals)
+  if (favoriteMeals !== null) {
+    if(favoriteMeals.includes(titleOfFavorites)){
+      return;
+    }
+    favoriteMeals.push(titleOfFavorites);
+    localStorage.setItem('favoriteMeals', JSON.stringify(favoriteMeals));
+  } else {
+    localStorage.setItem('favoriteMeals', JSON.stringify([titleOfFavorites]));
+  }
+  var favoritesList = document.createElement('li');
+  favoritesList.textContent = titleOfFavorites;
+  favoriteMealListEl.appendChild(favoritesList)
+})
 
 // })
 
+function getFavsFromStorage() {
+  var favoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals'))
 
-// function getFavsFromStorage() {
-// var SetFavoriteMeals = JSON.parse(localStorage.getItem('favoriteMeals'))
+  if (favoriteMeals !== null) {
+    for (var i = 0; i < favoriteMeals.length; i++) {
+      var favoritesList = document.createElement('li');
+      favoritesList.textContent = favoriteMeals[i];
+      favoriteMealListEl.appendChild(favoritesList)
+    }
+  }
+}
 
-// for(j=0; j<SetFavoriteMeals.length; j++){
-//   var favoritesList = document.createElement('li');
-//   favoritesList.textContent=SetFavoriteMeals[i];
-//   favoriteMealListEl.appendChild(favoritesList)
-// }
-// }
+getFavsFromStorage();
 
-
-
-
-// function tryagain(){
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '9c99646218msh9378014e04a0a25p1f2a3ajsn81783a87a42a',
-// 		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-// 	}
-// };
-
-// var suggestionsUrl = fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?cuisine=italian&diet=vegetarian&intolerances=gluten&equipment=pan&includeIngredients=tomato%2Ccheese&excludeIngredients=eggs&type=main%20course&instructionsRequired=true&offset=0&number=10&limitLicense=false&ranking=2', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-// // displaySuggestions(response);
-// }
-// tryagain();
 
