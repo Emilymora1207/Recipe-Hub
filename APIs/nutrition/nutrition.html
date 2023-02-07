@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <title>Nutrition</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+      <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title"><i class="nutrition"></i> Nutrition Facts</h1>
+    <p> Search for the Nutritional Facts of your recipe.
+    </p>
+  </header>
+
+
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Ingredients or Favorite Foods</h3>
+        <form id="food-form" class="card-body">
+          <label class="form-label" for="food">Food</label>
+          <input name="food" id="food" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn" id="language-buttons">Get Facts</button>
+        </form>
+      </div>      
+      
+</div>
+</div>
+
+<div class="col-12 col-md-8">
+  <h2 class="subtitle">Nutritional Facts for: <span id="food-search-term"></span></h2>
+  <div id="food-container" class="list-group"></div>
+  <div id="photo" ></div>
+</div>
+</main>
+
+      <script src='facts.js'></script>
+</body>
+</html>
