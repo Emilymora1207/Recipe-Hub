@@ -22,6 +22,11 @@ p {
   border-radius: 20px;
   font-size: 1.5rem;
 }
+
+/* ul{
+  display: flex;
+  flex-wrap: wrap;
+} */
 img{
   display: flex;
 }

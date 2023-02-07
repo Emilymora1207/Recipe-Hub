@@ -5,6 +5,7 @@ var ingredList = document.querySelector(".ingredients");
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
+
   var userInput = document.querySelector("#user-input").value;
 
   var modifiedInput = userInput.replaceAll("%20");
@@ -19,8 +20,13 @@ searchBtn.addEventListener("click", function (e) {
     });
 });
 function displayRecipe(response) {
-  for (var k = 0; k < response.meals.length; k++) {
-    var myMeal = response.meals[k];
+  ingredList.innerHTML = "";
+  if (response.meals < 1) {
+    alert("Sorry, we cannot find a recipe ");
+    return;
+  }
+  for (var i = 0; i < response.meals.length; i++) {
+    var myMeal = response.meals[i];
     var recipeItem = document.createElement("li");
     ingredList.appendChild(recipeItem);
     var itemTitle = document.createElement("h2");
@@ -33,7 +39,7 @@ function displayRecipe(response) {
     var listList = document.createElement("ul");
 
     recipeItem.appendChild(listList);
-    for (var l = 0; l < 20; l++) {
+    for (var l = 1; l < 20; l++) {
       if (myMeal["strIngredient" + l] === "") {
         break;
       }
