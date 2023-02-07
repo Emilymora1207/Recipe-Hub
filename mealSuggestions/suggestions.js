@@ -72,10 +72,11 @@ function displaySuggestions(response) {
     var imgEl = document.createElement('img');
     imgEl.setAttribute('src', response.results[i].image);
     suggestionsitemsEl.appendChild(imgEl);
-    var addBtn = document.createElement('button');
-    addBtn.textContent = "+";
+    var addBtn = document.createElement('i');
+    // addBtn.textContent = "+";
     suggestionsitemsEl.appendChild(addBtn);
     addBtn.setAttribute("id", response.results[i].title);
+    addBtn.setAttribute("class", 'heart icon');
   }
 }
 

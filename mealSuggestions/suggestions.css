@@ -1,4 +1,14 @@
+:root {
+    --dark-blue: #012030;
+    --medBlue: #13678A;
+    --teal: #45C4B0;
+    --green: #9AEBA3;
+    --yellow: #DAFDBA;
+  }
 
+  body {
+    background-color: var(--yellow);
+  }  
 
 * {
     text-align: center;
@@ -14,21 +24,27 @@ li {
     list-style: none;
 }
 
+
 .parameters {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    /* background-color: var(--green); */
 }
-.dropdown {
+.dropdownSection {
     margin: 30px;
 }
 
-.dropdown > select {
+.dropdownSection > select {
     width:150px;
     border-radius: 5px;
     border: none;
     background-color: lightgray;
+}
+
+.dropdown {
+    background-color: var(--teal);
 }
 
 .checkBoxes  {
@@ -78,6 +94,10 @@ li {
 }
 
 .suggestionsList button {
+    margin: 15px;
+}
+
+.heart {
     margin: 15px;
 }
 
