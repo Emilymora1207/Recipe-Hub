@@ -12,104 +12,204 @@
 
 //       f.addEventListener('submit', submitted);
 
-
-var userFormEl = document.querySelector('#user-form');
-var languageButtonsEl = document.querySelector('#language-buttons');
-var nameInputEl = document.querySelector('#username');
-var repoContainerEl = document.querySelector('#repos-container');
-var repoSearchTerm = document.querySelector('#repo-search-term');
+var foodFormEl = document.querySelector("#food-form");
+var foodInput = document.getElementById("food");
+var languageButtonsEl = document.querySelector("#language-buttons");
+var nameInputEl = document.querySelector("#food");
+var foodContainerEl = document.querySelector("#food-container");
+var foodSearchTerm = document.querySelector("#food-search-term");
 
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
-  var username = nameInputEl.value.trim();
+  var food = nameInputEl.value.trim();
 
-  if (username) {
-    getUserRepos(username);
+  if (food) {
+    getNutritionFacts(food);
 
-    repoContainerEl.textContent = '';
-    nameInputEl.value = '';
+    foodContainerEl.textContent = "";
+    nameInputEl.value = "";
   } else {
-    alert('Please enter a GitHub username');
+    alert("Please enter a food or ingredient");
   }
 };
 
 var buttonClickHandler = function (event) {
-  var language = event.target.getAttribute('data-language');
+  var language = event.target.getAttribute("data-language");
 
   if (language) {
-    getFeaturedRepos(language);
+    getFeatured(language);
 
-    repoContainerEl.textContent = '';
+    foodContainerEl.textContent = "";
   }
 };
 
-var getUserRepos = function (user) {
-  var apiUrl = 'https://api.github.com/users/' + user + '/repos';
+var getNutritionFacts = function (food) {
+  var apiUrl = "https://trackapi.nutritionix.com/v2/natural/nutrients";
 
-  fetch(apiUrl)
+  fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-app-id": "d85eee67",
+      "x-app-key": "d4fc6579c8e16471db80e37e19e287c9",
+      "x-remote-user-id": "0",
+    },
+    body: JSON.stringify({
+      query: foodInput.value,
+      timezone: "US/Eastern",
+    }),
+  })
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          displayRepos(data, user);
+          displayFood(data, food);
         });
       } else {
-        alert('Error: ' + response.statusText);
+        alert("Error: " + response.statusText);
       }
     })
     .catch(function (error) {
-      alert('Unable to connect to GitHub');
+      alert("Unable to connect to Nutritionix");
     });
 };
 
-var getFeaturedRepos = function (language) {
-  var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+var getFeaturedFood = function (language) {
+  var apiUrl =
+  "https://trackapi.nutritionix.com/v2/natural/nutrients" +
+    language +
+    "";
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        displayRepos(data.items, language);
+        displayFood(data.items, language);
       });
     } else {
-      alert('Error: ' + response.statusText);
+      alert("Error: " + response.statusText);
     }
   });
 };
 
-var displayRepos = function (repos, searchTerm) {
-  if (repos.length === 0) {
-    repoContainerEl.textContent = 'No repositories found.';
+var displayFood = function (data, searchTerm) {
+  console.log (data)
+  var food = data.foods;
+  if (food.length === 0) {
+    foodContainerEl.textContent = "No nutrition facts found.";
     return;
   }
 
-  repoSearchTerm.textContent = searchTerm;
 
-  for (var i = 0; i < repos.length; i++) {
-    var repoName = repos[i].owner.login + '/' + repos[i].name;
 
-    var repoEl = document.createElement('div');
-    repoEl.classList = 'list-item flex-row justify-space-between align-center';
+  foodSearchTerm.textContent = searchTerm;
+  console.log('food lenght: ' , food.length);
+  for (var i = 0; i < food.length; i++) {
+    var foodName =  food[i].food_name;
+    console.log("i: ", i)
 
-    var titleEl = document.createElement('span');
-    titleEl.textContent = repoName;
+    var foodEl = document.createElement("ul");
+    foodEl.classList = "list-item flex-row justify-space-between align-center";
 
-    repoEl.appendChild(titleEl);
+    var titleEl = document.createElement("li");
+    titleEl.textContent = foodName;
 
-    var statusEl = document.createElement('span');
-    statusEl.classList = 'flex-row align-center';
+    foodEl.appendChild(titleEl);
 
-    if (repos[i].open_issues_count > 0) {
-      statusEl.innerHTML =
-        "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
-    } else {
-      statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
-    }
+    var statusEl = document.createElement("li");
+    statusEl.classList = "flex-row align-center";
 
-    repoEl.appendChild(statusEl);
+    // if (food[i].open_items_count > 0) {
+    //   statusEl.innerHTML =
+    //     "<i class='fas fa-times status-icon icon-danger'></i>" +
+    //     food[i].open_items_count +
+    //     " issue(s)";
+    // } else {
+    //   statusEl.innerHTML =
+    //     "<i class='fas fa-check-square status-icon icon-success'></i>";
+    // }
 
-    repoContainerEl.appendChild(repoEl);
+//creates teh break elemnet
+    
+
+    // statusEl.textContent="sodium: " + food[i].nf_sodium
+    
+    // foodEl.appendChild(statusEl);
+
+    
+    var carloriesEl = document.createElement('li');
+    carloriesEl.textContent = "calories: " + food[i].nf_calories;    
+    foodEl.appendChild(carloriesEl);
+
+    var cholesterolEl = document.createElement('li');
+    cholesterolEl.textContent = "cholesterol: " + food[i].nf_cholesterol;
+    foodEl.appendChild(cholesterolEl);
+
+    var dietary_fiberEl = document.createElement('li');
+    dietary_fiberEl.textContent = "dietary_fiber: " + food[i].nf_dietary_fiber;
+    foodEl.appendChild(dietary_fiberEl);
+
+    var potassiumEl = document.createElement('li');
+    potassiumEl.textContent = "potassium: " + food[i].nf_potassium;
+    foodEl.appendChild(potassiumEl);
+
+    var proteinEl = document.createElement('li');
+    proteinEl.textContent = "protein: " + food[i].nf_protein;
+    foodEl.appendChild(proteinEl);
+
+    var saturated_fatEl = document.createElement('li');
+    saturated_fatEl.textContent = "saturated_fat: " + food[i].nf_saturated_fat;
+    foodEl.appendChild(saturated_fatEl);
+
+    var sodiumEl = document.createElement('li');
+    sodiumEl.textContent = "sodium: " + food[i].nf_sodium;
+    foodEl.appendChild(sodiumEl);
+
+    var sugarsEl = document.createElement('li');
+    sugarsEl.textContent = "sugars: " + food[i].nf_sugars;
+    foodEl.appendChild(sugarsEl);
+
+    var carbohydrateEl = document.createElement('li');
+    carbohydrateEl.textContent = "carbohydrate: " + food[i].nf_total_carbohydrate;
+    foodEl.appendChild(carbohydrateEl);
+
+    var total_fatEl = document.createElement('li');
+    total_fatEl.textContent = "total_fat: " + food[i].nf_total_fat;
+    foodEl.appendChild(total_fatEl);
+
+    var qtyEl = document.createElement('li');
+    qtyEl.textContent = "qty: " + food[i].serving_qty;
+    foodEl.appendChild(qtyEl);
+
+    var unitEl = document.createElement('li');
+    unitEl.textContent = "serving_unit: " + food[i].serving_unit;
+    foodEl.appendChild(unitEl);
+
+    var weight_gramsEl = document.createElement('li');
+    weight_gramsEl.textContent = "serving_weight_grams: " + food[i].serving_weight_grams;
+    foodEl.appendChild(weight_gramsEl);
+
+    var itemEl = document.createElement('li');
+    itemEl.textContent = "item: " + food[i].tags.item;
+    foodEl.appendChild(itemEl);
+
+    var highresEl = document.createElement('img');
+    highresEl.setAttribute("src",food[i].photo.highres);
+    document.getElementById("photo").appendChild(highresEl);
+
+
+
+
+
+
+
+
+
+
+    console.log("food element: ", foodEl);
+
+    foodContainerEl.appendChild(foodEl);
   }
 };
 
-userFormEl.addEventListener('submit', formSubmitHandler);
+foodFormEl.addEventListener("submit", formSubmitHandler);
 languageButtonsEl.addEventListener('click', buttonClickHandler);

@@ -24,10 +24,10 @@
 
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Ingredients or Favorite Foods</h3>
-        <form id="user-form" class="card-body">
+        <form id="food-form" class="card-body">
           <label class="form-label" for="food">Food</label>
           <input name="food" id="food" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get Facts</button>
+          <button type="submit" class="btn" id="language-buttons">Get Facts</button>
         </form>
       </div>      
       
@@ -36,7 +36,8 @@
 
 <div class="col-12 col-md-8">
   <h2 class="subtitle">Nutritional Facts for: <span id="food-search-term"></span></h2>
-  <div id="foods-container" class="list-group"></div>
+  <div id="food-container" class="list-group"></div>
+  <div id="photo" ></div>
 </div>
 </main>
 

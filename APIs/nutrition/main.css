@@ -1,4 +1,10 @@
-
+:root {
+  --grey: #8F797E;
+  --light-pink: #FFC2B5;
+  --purple: #646C8F;
+  --light-tan: #FFE3CC;
+  --tan: #DCC3A1;
+}
 
 form {
       background-color: #7aafa7;
