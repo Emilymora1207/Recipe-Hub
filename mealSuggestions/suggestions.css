@@ -1,23 +1,62 @@
+:root {
+    --grey: #8F797E;
+    --light-pink: #FFC2B5;
+    --purple: #646C8F;
+    --light-tan: #FFE3CC;
+    --tan: #DCC3A1;
+  }
+
+  body {
+    background-color: var(--light-tan);
+  }  
+
+* {
+    text-align: center;
+    /* color: var(--purple); */
+    border: none;
+    margin: 15px 0;
+}
+
 body {
+    margin:0px;
+    padding: 0px;
     display: flex;
     justify-content: center;
 }
+
+button {
+    background-color: var(--tan);
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+li {
+    list-style: none;
+
+}
+
 
 .parameters {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    /* background-color: var(--green); */
 }
-.dropdown {
+.dropdownSection {
     margin: 30px;
 }
 
-.dropdown > select {
+.dropdownSection > select {
     width:150px;
     border-radius: 5px;
-    border: none;
-    background-color: lightgray;
+    background-color:var(--light-pink);
+    padding: 5px;
+}
+
+.dropdown {
+
 }
 
 .checkBoxes  {
@@ -26,7 +65,7 @@ body {
     height: 500px;
     margin: 20px;
     padding: 40px;
-    background-color: lightgray;
+    background-color: var(--tan);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -43,11 +82,61 @@ body {
 .suggestionsList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 400;
+    padding: 0;
 }
 
 .suggestionsList li {
     list-style: none;
-    background-color: lightgray;
+    background-color: var(--purple);
     border-radius: 5px;
     margin: 10px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    flex: 1 1 400px;
+    justify-content: space-between;
+    /* width: 500px; */
+}
+.suggestionsList li img {
+    align-self: center;
+    border-radius: 5px;
+}
+
+.suggestionsList button {
+    margin: 15px;
+}
+
+.heart {
+    margin: 15px;
+}
+
+.suggestionsList h2 {
+    width:300px;
+}
+
+.lists {
+    display: flex;
+}
+
+.fullLength {
+    width: 100%;
+}
+.aside {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .larger {
+    width:80%;
+}
+
+.oSide {
+    width:15%;
+} */
+
+.favoriteMealList {
+    padding: 0;
 }
