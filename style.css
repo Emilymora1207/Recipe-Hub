@@ -1,32 +1,112 @@
-body {
-  background-color: aliceblue;
-}
-.container {
-  text-align: center;
-}
-p {
-  font-size: 1.5rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
-}
-#user-input {
-  height: 40px;
-  width: 500px;
-  border: solid 5px rgba(0, 0, 0, 0.656);
-  border-radius: 20px;
-  font-size: 1.5rem;
-}
-#search-btn {
-  height: 50px;
-  width: 100px;
-  border: solid 5px rgba(0, 0, 0, 0.656);
-  border-radius: 20px;
-  font-size: 1.5rem;
+*{
+  margin: 0;
+  padding:0;
 }
 
-/* ul{
-  display: flex;
-  flex-wrap: wrap;
-} */
-img{
-  display: flex;
-}
+body {
+  background-color:aliceblue;
+  }
+  .container {
+    text-align: center;
+    width:calc(100% - 200px);
+    left: 200px;
+    height: 100vh;
+  }
+
+  h1{
+    text-align: center;
+    margin-left: 250px;
+    font-family: 'Ubuntu Mono', monospace;
+  }
+  h2{
+    font-family: 'Ubuntu Mono', monospace;
+  }
+  p {
+    font-size: 1.3rem;
+    font-family: 'Ubuntu Mono', monospace;  }
+  
+
+  
+  .ingredients{
+    text-align: center;
+    font-family: 'Ubuntu Mono', monospace;
+  }
+  
+  .recipe{
+margin-left: 300px;
+margin-right: 50px;
+letter-spacing: 1px;
+  }
+  
+  #user-input {
+    height: 40px;
+    width: 200px;
+    border: solid 5px rgba(0, 0, 0, 0.656);
+    border-radius: 20px;
+    font-size: 1.5rem;
+  }
+  #search-btn {
+    height: 50px;
+    width: 100px;
+    border: solid 5px rgba(0, 0, 0, 0.656);
+    border-radius: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* ul{
+    display: flex;
+    flex-wrap: wrap;
+  } */
+  img{
+    /* display: flex; */
+    display: absolute;
+    width: 25%;
+    margin: 15px;
+  }
+
+  .recipe-img{
+width: 100%;
+margin-left: 5px;
+
+  }
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(#9A879D,#7A3B69);
+    display: flex;
+    flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align: center;
+        padding: 50px;
+      }
+    .scrollbar{
+      overflow: auto;
+      visibility: hidden;
+
+    }
+    .scrollbar-inner{
+      font-size: 20px;
+      color: black;
+    }
+
+      
+      ::-webkit-scrollbar{
+        width: 10px;
+      } 
+    
+      ::-webkit-scrollbar-track{
+      background:#7A3B69;
+      }
+    
+      ::-webkit-scrollbar-thumb{
+        
+        background:#9A879D ;
+        border-radius: 10px;
+      }
+      
+   
+        

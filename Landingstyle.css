@@ -1,9 +1,11 @@
 *{
     padding:0;
     margin:0;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 /* box-sizing:border-box; */
 }
+
+
 .hero{
     height:100vh;
     width: 100%;
@@ -41,13 +43,19 @@ cursor:pointer;
     color: black;
   display: flex;
    text-transform: uppercase;
+   font-family: 'Ubuntu Mono', monospace;
 /* webkit-transition:  ease-in-out; */
 }
 
+
 .navbar ul li:hover{
 background-color: salmon;
-width: 100px;
+width: 120px;
+transition: linear, 1.5s;
+
 }
+
+
 
 
 h1{
@@ -57,10 +65,14 @@ h1{
     letter-spacing: 1px;
     margin-left:150px;
     text-align: start;
-
+    font-family: 'Ubuntu Mono', monospace;
 }
 
-
+h2{
+    font-family: 'Ubuntu Mono', monospace;
+margin-bottom: 10px;
+margin-right: 60px;
+}
 
 
 .search-btn{
@@ -94,4 +106,29 @@ background-color: salmon;
     top: 75%;
     text-align: center;
     color: white;
+    
+}
+
+@media screen and (max-width: 992px){
+    
+        
+    
+}
+
+
+@media screen and (max-width: 768px){
+
+        
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+}
+
+@media screen and (max-width: 400px){
+   
+        
+        
 }
