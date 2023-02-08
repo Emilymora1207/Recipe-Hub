@@ -1,17 +1,20 @@
 :root {
-    --dark-blue: #012030;
-    --medBlue: #13678A;
-    --teal: #45C4B0;
-    --green: #9AEBA3;
-    --yellow: #DAFDBA;
+    --grey: #8F797E;
+    --light-pink: #FFC2B5;
+    --purple: #646C8F;
+    --light-tan: #FFE3CC;
+    --tan: #DCC3A1;
   }
 
   body {
-    background-color: var(--yellow);
+    background-color: var(--light-tan);
   }  
 
 * {
     text-align: center;
+    /* color: var(--purple); */
+    border: none;
+    margin: 15px 0;
 }
 
 body {
@@ -20,8 +23,17 @@ body {
     display: flex;
     justify-content: center;
 }
+
+button {
+    background-color: var(--tan);
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
 li {
     list-style: none;
+
 }
 
 
@@ -39,12 +51,12 @@ li {
 .dropdownSection > select {
     width:150px;
     border-radius: 5px;
-    border: none;
-    background-color: lightgray;
+    background-color:var(--light-pink);
+    padding: 5px;
 }
 
 .dropdown {
-    background-color: var(--teal);
+
 }
 
 .checkBoxes  {
@@ -53,7 +65,7 @@ li {
     height: 500px;
     margin: 20px;
     padding: 40px;
-    background-color: lightgray;
+    background-color: var(--tan);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -77,7 +89,7 @@ li {
 
 .suggestionsList li {
     list-style: none;
-    background-color: lightgray;
+    background-color: var(--purple);
     border-radius: 5px;
     margin: 10px;
     display:flex;

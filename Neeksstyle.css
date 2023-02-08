@@ -1,13 +1,3 @@
-:root {
-  /* declare a variable with `--` syntax */
-  --dark-blue: #012030;
-  --medBlue: #13678A;
-  --teal: #45C4B0;
-  --green: #9AEBA3;
-  --yellow: #DAFDBA;
-}
-
-
 
 *{
   margin: 0;

@@ -8,6 +8,7 @@ var suggestionsPageEl = document.querySelector('.suggestionsPage');
 var demoEl = document.querySelector('.demo');
 var suggestionsListEl = document.querySelector('.suggestionsList');
 var favoriteMealListEl = document.querySelector('.favoriteMealList');
+var returnToSearchBtn = document.querySelector('.returnToSearch');
 
 var suggestionsUrl;
 var cuisineType;
@@ -72,11 +73,11 @@ function displaySuggestions(response) {
     var imgEl = document.createElement('img');
     imgEl.setAttribute('src', response.results[i].image);
     suggestionsitemsEl.appendChild(imgEl);
-    var addBtn = document.createElement('i');
-    // addBtn.textContent = "+";
+    var addBtn = document.createElement('button');
+    addBtn.textContent = "+";
     suggestionsitemsEl.appendChild(addBtn);
     addBtn.setAttribute("id", response.results[i].title);
-    addBtn.setAttribute("class", 'heart icon');
+    // addBtn.setAttribute("class", 'heart icon');
   }
 }
 
@@ -114,4 +115,8 @@ function getFavsFromStorage() {
 
 getFavsFromStorage();
 
-
+returnToSearchBtn.addEventListener('click', function(){
+  choosingOptionsPage.style.display= 'initial';
+  suggestionsPageEl.style.display='none';
+  suggestionsListEl.innerHTML= '';
+})

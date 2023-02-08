@@ -1,7 +1,11 @@
 {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+<<<<<<< HEAD
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     }
+=======
+    "liveServer.settings.port": 5501
+>>>>>>> 90c16c06419e3a9a4102eb06681e43834a32111e
 }
