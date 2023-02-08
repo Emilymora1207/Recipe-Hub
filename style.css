@@ -1,8 +1,19 @@
+:root {
+  --grey: #8F797E;
+  --light-pink: #FFC2B5;
+  --purple: #646C8F;
+  --light-tan: #FFE3CC;
+  --tan: #DCC3A1;
+}
+
 body {
-  background-color: aliceblue;
+
+  /* background-color: (var(--light-tan)); */
+background-color: var(--light-tan);
 }
 .container {
   text-align: center;
+  margin-top: 100px;
 }
 p {
   font-size: 1.5rem;
@@ -23,10 +34,44 @@ p {
   font-size: 1.5rem;
 }
 
-/* ul{
+ul{
   display: flex;
   flex-wrap: wrap;
-} */
+ 
+  
+}
 img{
+
+  width: 500px;
+  border-radius: 80px;
+
+
+  
+}
+li{
+  width: 100%;
+}
+.ingredients{
+  
   display: flex;
+  flex-direction: row;
+}
+
+.ingredients *{
+  width: 100%;
+}
+#photo{
+  padding-left: 40px;
+  border-radius: 30px;
+
+}
+h2{
+  background-color: #d7d9e2;
+  text-align: center;
+ padding: 30px;
+
+}
+
+.col-4{
+  padding-right: 50px;
 }
