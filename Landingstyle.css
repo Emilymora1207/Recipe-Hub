@@ -18,6 +18,12 @@ a {
     text-decoration: none;
 }
 
+body {
+    padding:0;
+    margin:0;
+    background-image: linear-gradient(#8F797E, #FFE3CC);
+}
+
 .hero{
     height:100vh;
     width: 100%;
@@ -39,7 +45,7 @@ cursor:pointer;
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
-    height:150px;
+    height:300px;
     }
     
 
@@ -49,6 +55,9 @@ cursor:pointer;
     margin: 0 20px;
     font-size: 20px; 
     margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px;
+
     
 }
 
@@ -57,14 +66,17 @@ cursor:pointer;
   display: flex;
    text-transform: uppercase;
    font-family: 'Ubuntu Mono', monospace;
+   text-align: center;
+
 /* webkit-transition:  ease-in-out; */
 }
 
 
 .navbar ul li:hover{
-background-color: salmon;
+background-color: var(--light-pink);
 width: 120px;
 transition: linear, 1.5s;
+
 
 }
 
@@ -97,7 +109,7 @@ margin-right: 60px;
 }
 
 .search-btn:hover{
-background-color: salmon;
+background-color: var(--light-pink);
 }
 
 .search{
@@ -122,21 +134,15 @@ background-color: salmon;
     
 }
 
-.recipe-section{
-    background-color: #ffc3b55e;
-}
 
-.suggestions-section {
-    background-color: #ffc3b5c2;
-}
 
-.recipe-section, .suggestions-section {
+.recipe-section, .suggestions-section{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-
+    flex-direction: column-reverse;
+    justify-content: space-around;
     height: 400px;
     align-items: center;
+    width: fit-content;
 }
 
 .recipe-section button, .suggestions-section button {
@@ -152,19 +158,22 @@ background-color: salmon;
 }
 
 .recipe-section h1, .suggestions-section h1 {
-    background-color: var(--purple);
+    background-color: #646c8f73;
     border-radius: 20px;
-    padding: 15px;
+    /* padding: 15px; */
     text-align: center;
+    width: 400px;
+    padding: 20px;
 }
 
 a{
     color: black;
 }
 
-a:visited {
-    color: var(--purple);
+.sections {
+    display: flex;
 }
+
 
 @media screen and (max-width: 992px){
     

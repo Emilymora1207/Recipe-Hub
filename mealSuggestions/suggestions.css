@@ -6,23 +6,27 @@
     --tan: #DCC3A1;
   }
 
-  body {
-    background-color: var(--light-tan);
-  }  
+  body{
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#8F797E, #FFE3CC);
+  }
 
 * {
     text-align: center;
     /* color: var(--purple); */
     border: none;
     margin: 15px 0;
+    padding:0;
+    margin:0;
 }
 
-body {
+/* body {
     margin:0px;
     padding: 0px;
 
 
-}
+} */
 
 .suggestionsPart {
 
@@ -30,8 +34,9 @@ body {
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    background-color: #646C8F;
+    background-color: var(--grey);
     margin: 0 10% 10% 10%;
+    padding: 15px;
 }
 
 

@@ -29,6 +29,7 @@ var formSubmitHandler = function (event) {
 
     foodContainerEl.textContent = "";
     nameInputEl.value = "";
+    highresEl.remove()
   } else {
     alert("Please enter a food or ingredient");
   }
@@ -41,6 +42,8 @@ var buttonClickHandler = function (event) {
     getFeatured(language);
 
     foodContainerEl.textContent = "";
+
+
   }
 };
 
@@ -101,7 +104,7 @@ var displayFood = function (data, searchTerm) {
 
 
 
-  foodSearchTerm.textContent = searchTerm;
+  foodSearchTerm.textContent = ("Nutritional Facts for " + searchTerm);
   console.log('food lenght: ' , food.length);
   for (var i = 0; i < food.length; i++) {
     var foodName =  food[i].food_name;
@@ -195,6 +198,7 @@ var displayFood = function (data, searchTerm) {
     var highresEl = document.createElement('img');
     highresEl.setAttribute("src",food[i].photo.highres);
     document.getElementById("photo").appendChild(highresEl);
+    // highresEl.setAttribute('id', 'photo-search');
 
 
 

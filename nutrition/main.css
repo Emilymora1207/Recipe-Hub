@@ -6,8 +6,16 @@
   --tan: #DCC3A1;
 }
 
+* {
+  text-align: center;
+    margin:0px;
+    padding: 0px;
+
+
+}
+
 form {
-      background-color: #7aafa7;
+      background-color: var(--light-pink);
       width: 300px;
       height: 44px;
       border-radius: 5px;
@@ -38,3 +46,18 @@ input {
       width: 44px;
       height: 44px;
     }
+
+.nutrient-search {
+      display: flex;
+      justify-content: center;
+      background-color: var(--grey);
+}
+.nutrient-search * {
+  padding: 5px;
+}
+
+.search-results{
+  display: flex;
+  justify-content: space-around;
+}
+
