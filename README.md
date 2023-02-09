@@ -28,3 +28,7 @@ AS A cook, I WANT to look for a recipe, SO THAT I can make the perfect meal.
 -Styling can be consistently improved. 
 -Have a more interactive Landing Page.
 -API’s can be added for locations for ingredients at grocery stores.
+
+Link to the GitHub Repo
+
+https://github.com/Emilymora1207/Recipe-Hub.git
