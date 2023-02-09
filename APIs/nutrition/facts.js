@@ -1,16 +1,3 @@
-// const f = document.getElementById('form');
-//       const q = document.getElementById('query');
-//       const google = 'https://www.google.com/search?q=site%3A+';
-//       const site = 'pagedart.com';
-
-//       function submitted(event) {
-//         event.preventDefault();
-//         const url = google + site + '+' + q.value;
-//         const win = window.open(url, '_blank');
-//         win.focus();
-//       }
-
-//       f.addEventListener('submit', submitted);
 
 var foodFormEl = document.querySelector("#food-form");
 var foodInput = document.getElementById("food");
@@ -99,8 +86,6 @@ var displayFood = function (data, searchTerm) {
     return;
   }
 
-
-
   foodSearchTerm.textContent = searchTerm;
   console.log('food lenght: ' , food.length);
   for (var i = 0; i < food.length; i++) {
@@ -117,16 +102,6 @@ var displayFood = function (data, searchTerm) {
 
     var statusEl = document.createElement("li");
     statusEl.classList = "flex-row align-center";
-
-    // if (food[i].open_items_count > 0) {
-    //   statusEl.innerHTML =
-    //     "<i class='fas fa-times status-icon icon-danger'></i>" +
-    //     food[i].open_items_count +
-    //     " issue(s)";
-    // } else {
-    //   statusEl.innerHTML =
-    //     "<i class='fas fa-check-square status-icon icon-success'></i>";
-    // }
 
 //creates teh break elemnet
     
@@ -195,15 +170,6 @@ var displayFood = function (data, searchTerm) {
     var highresEl = document.createElement('img');
     highresEl.setAttribute("src",food[i].photo.highres);
     document.getElementById("photo").appendChild(highresEl);
-
-
-
-
-
-
-
-
-
 
     console.log("food element: ", foodEl);
 
