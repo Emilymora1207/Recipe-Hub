@@ -1,3 +1,12 @@
+:root {
+    --grey: #8F797E;
+    --light-pink: #FFC2B5;
+    --purple: #646C8F;
+    --light-tan: #FFE3CC;
+    --tan: #DCC3A1;
+  }
+
+
 *{
     padding:0;
     margin:0;
@@ -5,11 +14,14 @@
 /* box-sizing:border-box; */
 }
 
+a {
+    text-decoration: none;
+}
 
 .hero{
     height:100vh;
     width: 100%;
-    background-image: url("../kitchen.jpeg");
+    background-image: url("./kitchen.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -25,8 +37,9 @@ cursor:pointer;
     margin: auto;
     padding:35px 0;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
+    height:150px;
     }
     
 
@@ -58,7 +71,7 @@ transition: linear, 1.5s;
 
 
 
-h1{
+h1, .title{
     width: 25%;
     color: white;
     font-size: 50px;
@@ -107,6 +120,50 @@ background-color: salmon;
     text-align: center;
     color: white;
     
+}
+
+.recipe-section{
+    background-color: #ffc3b55e;
+}
+
+.suggestions-section {
+    background-color: #ffc3b5c2;
+}
+
+.recipe-section, .suggestions-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    height: 400px;
+    align-items: center;
+}
+
+.recipe-section button, .suggestions-section button {
+    /* height: 80px; */
+    border-radius: 20px;
+    padding: 20px;
+    border-style: none;
+    background-color: var(--grey);
+    color: black;
+
+    box-shadow: 5px 5px 15px;
+    font-size: 30pt;
+}
+
+.recipe-section h1, .suggestions-section h1 {
+    background-color: var(--purple);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+a{
+    color: black;
+}
+
+a:visited {
+    color: var(--purple);
 }
 
 @media screen and (max-width: 992px){

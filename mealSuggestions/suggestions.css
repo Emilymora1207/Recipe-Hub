@@ -20,9 +20,20 @@
 body {
     margin:0px;
     padding: 0px;
+
+
+}
+
+.suggestionsPart {
+
+    width: 80%;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    background-color: #646C8F;
+    margin: 0 10% 10% 10%;
 }
+
 
 button {
     background-color: var(--tan);
@@ -89,8 +100,8 @@ li {
 
 .suggestionsList li {
     list-style: none;
-    background-color: var(--purple);
-    border-radius: 5px;
+    background-color: var(--light-tan);
+    border-radius: 20px;
     margin: 10px;
     display:flex;
     flex-wrap: wrap;
