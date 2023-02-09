@@ -1,16 +1,24 @@
+:root {
+  --grey: #8F797E;
+  --light-pink: #FFC2B5;
+  --purple: #646C8F;
+  --light-tan: #FFE3CC;
+  --tan: #DCC3A1;
+}
+
 *{
   margin: 0;
   padding:0;
 }
 
 body {
-  background-color:aliceblue;
+    height: 100%;
   }
-  .container {
+  .grid-container1 {
     text-align: center;
-    width:calc(100% - 200px);
+    /* width:calc(100% - 200px); */
     left: 200px;
-    height: 100vh;
+
   }
 
   h1{
@@ -33,9 +41,9 @@ body {
   }
   
   .recipe{
-margin-left: 300px;
-margin-right: 50px;
-letter-spacing: 1px;
+    margin-left: 300px;
+    margin-right: 50px;
+    letter-spacing: 1px;
   }
   
   #user-input {
@@ -75,7 +83,7 @@ margin-left: 5px;
     left: 0;
     width: 200px;
     height: 100%;
-    background: linear-gradient(#9A879D,#7A3B69);
+    background: linear-gradient(var(--grey), var(--purple));
     display: flex;
     flex-direction: column;
         overflow-x: hidden;

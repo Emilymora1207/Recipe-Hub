@@ -6,23 +6,39 @@
     --tan: #DCC3A1;
   }
 
-  body {
-    background-color: var(--light-tan);
-  }  
+  body{
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#8F797E, #FFE3CC);
+  }
 
 * {
     text-align: center;
     /* color: var(--purple); */
     border: none;
     margin: 15px 0;
+    padding:0;
+    margin:0;
 }
 
-body {
+/* body {
     margin:0px;
     padding: 0px;
+
+
+} */
+
+.suggestionsPart {
+
+    width: 80%;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    background-color: var(--grey);
+    margin: 0 10% 10% 10%;
+    padding: 15px;
 }
+
 
 button {
     background-color: var(--tan);
@@ -89,8 +105,8 @@ li {
 
 .suggestionsList li {
     list-style: none;
-    background-color: var(--purple);
-    border-radius: 5px;
+    background-color: var(--light-tan);
+    border-radius: 20px;
     margin: 10px;
     display:flex;
     flex-wrap: wrap;

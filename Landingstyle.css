@@ -1,3 +1,12 @@
+:root {
+    --grey: #8F797E;
+    --light-pink: #FFC2B5;
+    --purple: #646C8F;
+    --light-tan: #FFE3CC;
+    --tan: #DCC3A1;
+  }
+
+
 *{
     padding:0;
     margin:0;
@@ -5,11 +14,20 @@
 /* box-sizing:border-box; */
 }
 
+a {
+    text-decoration: none;
+}
+
+body {
+    padding:0;
+    margin:0;
+    background-image: linear-gradient(#8F797E, #FFE3CC);
+}
 
 .hero{
     height:100vh;
     width: 100%;
-    background-image: url("../kitchen.jpeg");
+    background-image: url("./kitchen.jpeg");
     background-size: cover;
     background-position: center;
 }
@@ -25,8 +43,9 @@ cursor:pointer;
     margin: auto;
     padding:35px 0;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
+    height:300px;
     }
     
 
@@ -36,6 +55,9 @@ cursor:pointer;
     margin: 0 20px;
     font-size: 20px; 
     margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px;
+
     
 }
 
@@ -44,21 +66,24 @@ cursor:pointer;
   display: flex;
    text-transform: uppercase;
    font-family: 'Ubuntu Mono', monospace;
+   text-align: center;
+
 /* webkit-transition:  ease-in-out; */
 }
 
 
 .navbar ul li:hover{
-background-color: salmon;
+background-color: var(--light-pink);
 width: 120px;
 transition: linear, 1.5s;
+
 
 }
 
 
 
 
-h1{
+h1, .title{
     width: 25%;
     color: white;
     font-size: 50px;
@@ -84,7 +109,7 @@ margin-right: 60px;
 }
 
 .search-btn:hover{
-background-color: salmon;
+background-color: var(--light-pink);
 }
 
 .search{
@@ -108,6 +133,47 @@ background-color: salmon;
     color: white;
     
 }
+
+
+
+.recipe-section, .suggestions-section{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 400px;
+    align-items: center;
+    width: fit-content;
+}
+
+.recipe-section button, .suggestions-section button {
+    /* height: 80px; */
+    border-radius: 20px;
+    padding: 20px;
+    border-style: none;
+    background-color: var(--grey);
+    color: black;
+
+    box-shadow: 5px 5px 15px;
+    font-size: 30pt;
+}
+
+.recipe-section h1, .suggestions-section h1 {
+    background-color: #646c8f73;
+    border-radius: 20px;
+    /* padding: 15px; */
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+}
+
+a{
+    color: black;
+}
+
+.sections {
+    display: flex;
+}
+
 
 @media screen and (max-width: 992px){
     

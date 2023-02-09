@@ -74,7 +74,7 @@ function displaySuggestions(response) {
     imgEl.setAttribute('src', response.results[i].image);
     suggestionsitemsEl.appendChild(imgEl);
     var addBtn = document.createElement('button');
-    addBtn.textContent = "+";
+    addBtn.textContent = "Add to Favorites +";
     suggestionsitemsEl.appendChild(addBtn);
     addBtn.setAttribute("id", response.results[i].title);
     // addBtn.setAttribute("class", 'heart icon');
