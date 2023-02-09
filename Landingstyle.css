@@ -1,0 +1,200 @@
+:root {
+    --grey: #8F797E;
+    --light-pink: #FFC2B5;
+    --purple: #646C8F;
+    --light-tan: #FFE3CC;
+    --tan: #DCC3A1;
+  }
+
+
+*{
+    padding:0;
+    margin:0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* box-sizing:border-box; */
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    padding:0;
+    margin:0;
+    background-image: linear-gradient(#8F797E, #FFE3CC);
+}
+
+.hero{
+    height:100vh;
+    width: 100%;
+    background-image: url("https://github.com/Emilymora1207/Recipe-Hub/blob/main/kitchen.jpeg?raw=true");
+    background-size: cover;
+    background-position: center;
+}
+
+.title{
+width: 120px;
+cursor:pointer;
+
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding:35px 0;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    height:300px;
+    }
+    
+
+
+.navbar ul li{
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 20px; 
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px;
+
+    
+}
+
+.navbar ul li a {
+    color: black;
+  display: flex;
+   text-transform: uppercase;
+   font-family: 'Ubuntu Mono', monospace;
+   text-align: center;
+
+/* webkit-transition:  ease-in-out; */
+}
+
+
+.navbar ul li:hover{
+background-color: var(--light-pink);
+width: 120px;
+transition: linear, 1.5s;
+
+
+}
+
+
+
+
+h1, .title{
+    width: 25%;
+    color: white;
+    font-size: 50px;
+    letter-spacing: 1px;
+    margin-left:150px;
+    text-align: start;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+h2{
+    font-family: 'Ubuntu Mono', monospace;
+margin-bottom: 10px;
+margin-right: 60px;
+}
+
+
+.search-btn{
+    width: 200px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: whitesmoke;
+    font-size: larger;
+}
+
+.search-btn:hover{
+background-color: var(--light-pink);
+}
+
+.search{
+    width: 75px;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    background: transparent;
+    border:solid;
+    border-radius: 20px;
+}
+
+.search:hover{
+    color: salmon;
+}
+
+.about-us{
+    width: 100%;
+    position: absolute;
+    top: 75%;
+    text-align: center;
+    color: white;
+    
+}
+
+
+
+.recipe-section, .suggestions-section{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 400px;
+    align-items: center;
+    width: fit-content;
+}
+
+.recipe-section button, .suggestions-section button {
+    /* height: 80px; */
+    border-radius: 20px;
+    padding: 20px;
+    border-style: none;
+    background-color: var(--grey);
+    color: black;
+
+    box-shadow: 5px 5px 15px;
+    font-size: 30pt;
+}
+
+.recipe-section h1, .suggestions-section h1 {
+    background-color: #646c8f73;
+    border-radius: 20px;
+    /* padding: 15px; */
+    text-align: center;
+    width: 400px;
+    padding: 20px;
+}
+
+a{
+    color: black;
+}
+
+.sections {
+    display: flex;
+}
+
+
+@media screen and (max-width: 992px){
+    
+        
+    
+}
+
+
+@media screen and (max-width: 768px){
+
+        
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+}
+
+@media screen and (max-width: 400px){
+   
+        
+        
+}

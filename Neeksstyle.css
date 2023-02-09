@@ -29,7 +29,7 @@ top: 0;
 left: 0;
 width: 400px;
 height: 100%;
-background: linear-gradient(#9A879D,#7A3B69);
+/* background: linear-gradient(#9A879D,#7A3B69); */
 display: flex;
 flex-direction: column;
     overflow-x: hidden;
