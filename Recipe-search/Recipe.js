@@ -3,8 +3,9 @@ var searchBtn = document.querySelector("#search-btn");
 var recipe = document.querySelector(".recipe");
 var ingredList = document.querySelector(".ingredients");
 
-searchBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  document.getElementById("alertP").textContent = "";
 
   var userInput = document.querySelector("#user-input").value;
 
@@ -16,26 +17,30 @@ searchBtn.addEventListener("click", function (e) {
     .then((response) => {
       console.log(response);
 
-      displayRecipe(response);
+      displayRecipe(response, userInput);
     });
 });
-function displayRecipe(response) {
-  ingredList.innerHTML = "";
+function displayRecipe(response, userInput) {
+  ingredList.innerHTML = "ingredients";
+
   if (response.meals < 1) {
-    alert("Sorry, we cannot find a recipe ");
+    document.getElementById(
+      "alertP"
+    ).textContent = `Sorry, we cannot find a recipe with ${userInput} !`;
     return;
   }
-  for (var i = 0; i < response.meals.length; i++) {
+  for (var i = 0; i < 1; i++) {
     var myMeal = response.meals[i];
-    var recipeItem = document.createElement("li");
+    var recipeItem = document.createElement("div");
     ingredList.appendChild(recipeItem);
-    var itemTitle = document.createElement("h2");
+    var itemTitle = document.getElementById("title");
     itemTitle.textContent = myMeal.strMeal;
+    var itemImgl = document.getElementById("photo");
     var itemImg = document.createElement("img");
     itemImg.setAttribute("src", myMeal.strMealThumb);
-    recipeItem.appendChild(itemTitle);
+    // recipeItem.appendChild(itemTitle);
 
-    recipeItem.appendChild(itemImg);
+    itemImgl.appendChild(itemImg);
     var listList = document.createElement("ul");
 
     recipeItem.appendChild(listList);
@@ -48,8 +53,8 @@ function displayRecipe(response) {
       ingridMeasure.textContent =
         myMeal["strIngredient" + l] + ":" + myMeal["strMeasure" + l];
     }
-    var instructionsItem = document.createElement("p");
-    recipeItem.appendChild(instructionsItem);
+    var instructionsItem = document.getElementById("direction");
+    // recipeItem.appendChild(instructionsItem);
     instructionsItem.textContent = myMeal.strInstructions;
   }
 }

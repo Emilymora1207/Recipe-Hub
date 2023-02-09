@@ -27,7 +27,7 @@ body {
 .hero{
     height:100vh;
     width: 100%;
-    background-image: url("./kitchen.jpeg");
+    background-image: url("https://github.com/Emilymora1207/Recipe-Hub/blob/main/kitchen.jpeg?raw=true");
     background-size: cover;
     background-position: center;
 }

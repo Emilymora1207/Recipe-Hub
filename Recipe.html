@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Let's get cooking!</h1>
+
+      <p>
+        Whatever is left in your empty pantry, we have a recipe idea for you!
+      </p>
+      <p id="alertP"></p>
+      <div class="search-container">
+        <input type="text" placeholder="Type a dish here..." id="user-input" />
+        <button id="search-btn">Seach</button>
+      </div>
+    </div>
+    <div class="recipe">
+      <div class="row">
+      <h2 id="title"
+      ></h2>
+    </div>
+    <div class="row">
+      <div class="col-5">
+      <div id="photo"></div>
+    </div>
+    <div class="col-3">
+      <ul class="ingredients"></ul>
+    </div>
+    <div class="col-4" id="direction"></div>
+    </div>
+    </div>
+    <script src="./Recipe.js"></script>
+  </body>
+</html>
