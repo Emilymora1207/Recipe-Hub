@@ -1,16 +1,3 @@
-// const f = document.getElementById('form');
-//       const q = document.getElementById('query');
-//       const google = 'https://www.google.com/search?q=site%3A+';
-//       const site = 'pagedart.com';
-
-//       function submitted(event) {
-//         event.preventDefault();
-//         const url = google + site + '+' + q.value;
-//         const win = window.open(url, '_blank');
-//         win.focus();
-//       }
-
-//       f.addEventListener('submit', submitted);
 
 var foodFormEl = document.querySelector("#food-form");
 var foodInput = document.getElementById("food");
@@ -42,8 +29,6 @@ var buttonClickHandler = function (event) {
     getFeatured(language);
 
     foodContainerEl.textContent = "";
-
-
   }
 };
 
@@ -102,8 +87,6 @@ var displayFood = function (data, searchTerm) {
     return;
   }
 
-
-
   foodSearchTerm.textContent = ("Nutritional Facts for " + searchTerm);
   console.log('food lenght: ' , food.length);
   for (var i = 0; i < food.length; i++) {
@@ -132,13 +115,11 @@ var displayFood = function (data, searchTerm) {
     // }
 
 //creates teh break elemnet
-    
 
     // statusEl.textContent="sodium: " + food[i].nf_sodium
     
     // foodEl.appendChild(statusEl);
 
-    
     var carloriesEl = document.createElement('li');
     carloriesEl.textContent = "calories: " + food[i].nf_calories;    
     foodEl.appendChild(carloriesEl);
@@ -199,15 +180,6 @@ var displayFood = function (data, searchTerm) {
     highresEl.setAttribute("src",food[i].photo.highres);
     document.getElementById("photo").appendChild(highresEl);
     // highresEl.setAttribute('id', 'photo-search');
-
-
-
-
-
-
-
-
-
 
     console.log("food element: ", foodEl);
 

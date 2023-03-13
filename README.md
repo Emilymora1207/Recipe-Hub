@@ -13,6 +13,16 @@ AS A cook, I WANT to look for a recipe, SO THAT I can make the perfect meal.
 -Challenges: Finding the right APIs, pulling the right information from the APIs, Using the API’s more fluidly.
 -Successes: Found multiple API’s that can be used for a single Website.
 
+
+## Usage
+
+https://gdutra2002.github.io/Project1/
+
+![alt text](screenshot.png)
+
+https://github.com/gdutra2002/Project1
+
+
 ## Contributors
 
 * Emily Mora 
