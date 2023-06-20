@@ -1,15 +1,20 @@
 :root {
-    --grey: #8F797E;
-    --light-pink: #FFC2B5;
-    --purple: #646C8F;
-    --light-tan: #FFE3CC;
-    --tan: #DCC3A1;
+    --grey: #8f797ead;
+    --light-pink: #ffc3b5b4;
+    --purple: #646c8fa9;
+    --light-tan: #ffe3ccb0;
+    --tan: #dcc3a1a8;
   }
 
   body{
     padding: 0;
     margin: 0;
-    background-image: linear-gradient(#8F797E, #FFE3CC);
+    /* background-image: linear-gradient(#8F797E7a, #ffe3cc7a); */
+    background-image: url("../jason-briscoe-GliaHAJ3_5A-unsplash.jpg");
+
+    background-size: cover;
+    background-position: center;
+
   }
 
 * {
