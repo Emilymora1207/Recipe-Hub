@@ -6,6 +6,10 @@ his site will be a place for the user to find whatever recipe they need. They wi
 We wanted to make a single place where someone can go to find any recipe they need 
 AS A cook, I WANT to look for a recipe, SO THAT I can make the perfect meal.
 
+![Home Page](./assets/homePageImage.png)
+
+![Suggestions Page](./assets/suggestionsPageImage.png)
+
 ##Process
 
 -Technologies used: HTML, CSS, JavaScript, Track API, Spoonacular API, and TheMealDB API.
